@@ -13,10 +13,13 @@
   - [Dependencies](#dependencies)
   - [Installation](#installation)
 - [Usage](#usage)
+- [Credits](#credits)
 
 ## Setup
 ### Dependencies
 - `sh` to process
+- [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard) for [Wayland](https://wayland.freedesktop.org)
+- [`xclip`](https://github.com/astrand/xclip) or [`xsel`](http://www.kfish.org/software/xsel) for [X.org](https://www.x.org)
 
 ### Installation
 #### Manually
@@ -49,6 +52,11 @@ Paste from clipboard:
 ```sh
 clipb paste
 ```
+
+## Credits
+Special thanks to:
+- [**Kakboard**](https://github.com/lePerdu/kakboard) by [Zach Peltzer](https://github.com/lePerdu)
+- [**Vis-clipboard**](https://github.com/martanne/vis) by [Marc André Tanner](https://github.com/martanne)
 
 <br><br><br><br>
 
