@@ -1,0 +1,128 @@
+#!/bin/sh
+
+#    _________       ____
+#   / ____/ (_)___  / __ )
+#  / /   / / / __ \/ __  |
+# / /___/ / / /_/ / /_/ /
+# \____/_/_/ .___/_____/
+#         /_/
+
+# File:         clipb
+# Description:  Clipboard managers warper that SuperB
+# Author:       NNB
+#               └─ https://github.com/NNBnh
+# URL:          https://github.com/NNBnh/clipb
+# License:      GPLv3
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+# Values
+case $(uname -s | sed -e 's/^[[:upper:]]/\L&/g') in
+	'cygwin')
+		 COPY_COMMAND='cat >/dev/clipboard'
+		PASTE_COMMAND='cat /dev/clipboard'
+	;;
+	'darwin'*)
+		 COPY_COMMAND='pbcopy'
+		PASTE_COMMAND='pbpaste'
+	;;
+	*)
+		if [ -n "$WAYLAND_DISPLAY" ]; then
+			if command -v wl-copy >/dev/null && command -v wl-paste >/dev/null; then
+				 COPY_COMMAND='wl-copy'
+				PASTE_COMMAND='wl-paste --no-newline'
+			else
+			printf '%s' "clipb: can't interact with Wayland's clipboard
+please install 'wl-clipboard'"
+
+			exit 1
+			fi
+		elif [ -n "$DISPLAY" ]; then
+			if command -v xclip >/dev/null; then
+				 COPY_COMMAND='xclip -in  -selection clipboard'
+				PASTE_COMMAND='xclip -out -selection clipboard'
+			elif command -v xsel >/dev/null; then
+				 COPY_COMMAND='xsel --input  --clipboard'
+				PASTE_COMMAND='xsel --output --clipboard'
+			else
+			printf '%s' "clipb: can't interact with Xorg's clipboard
+please install 'xclip' or 'xsel'"
+
+			exit 1
+			fi
+		else
+			printf '%s' "clipb: this system is not supported"
+
+			exit 1
+		fi
+	;;
+esac
+
+ACTION="${1:-copy}"
+TEXTS="$*"
+
+if [ -p '/dev/stdin' ] && [ "$TEXTS" = "$ACTION" ]; then
+	TEXTS=$(cat -)
+else
+	TEXTS="${TEXTS#$ACTION}"
+fi
+
+
+# Start
+case "$ACTION" in
+	'copy')  eval  "$COPY_COMMAND \"\$TEXTS\"" ;;
+	'paste') eval "$PASTE_COMMAND"             ;;
+	'help')
+		printf "\033[1mClipb\033[0m is a SuperB clipboard managers warper that
+wraps various system-specific tools for interacting with a system clipboard.
+
+\033[1mUsage:\033[0m
+    clipb copy TEXTS
+    clipb paste
+    clipb help
+
+  copy     copy TEXTS to clipboard
+  paste    paste from clipboard
+  help     display this help and exit"
+    ;;
+	*)
+		printf '%s' "clipb: invalid actions -- '$ACTION'
+Try 'clipb help' for more information."
+
+		exit 1
+	;;
+esac
+
+
+exit 0
+#
+#       ▄▄▄▄█▀▀█▄▄▄▄
+#   ▄▄▄▄█▓▓▓█▄▄█▓▓▓█▄▄▄▄
+#   ██▀▀█▓▓▓▓▓▓▓▓▓▓█▀▀██
+#   ██  ▀▀▀▀▀▀▀▀▀▀▀▀  ██
+#   ██  ▄▄▄▄▄▄▄▄      ██
+#   ██                ██
+#   ██  ▀▀▀▀▀▀▀▀▀▀▀▀  ██
+#   ██  ▄▄▄▄▄▄▄▄▄▄▄▄  ██
+#   ██                ██
+#   ██      ▀▀▀▀▀▀▀▀  ██
+#   ██▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄██
+#   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+#    ______   ____  ______
+#   <  /__ \ ( __ )/ / / /
+#   / /__/ // __  / / / /
+#  / // __// /_/ /_/_/_/
+# /_//____/\____(_|_|_)
+#
