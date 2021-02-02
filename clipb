@@ -29,7 +29,7 @@
 
 
 # Values
-case $(uname -s | sed -e 's/^[[:upper:]]/\L&/g') in
+case $(uname -s | sed -e 's/[[:upper:]]/\L&/g') in
 	'cygwin')
 		 COPY_COMMAND='cat >/dev/clipboard'
 		PASTE_COMMAND='cat /dev/clipboard'
