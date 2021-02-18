@@ -1,0 +1,9 @@
+{
+  "name": "clipb",
+  "version": "1.0.2",
+  "description": "Clipboard managers warper that SuperB",
+  "global": "true",
+  "scripts": ["bin/clipb"],
+  "files": ["man/clipb.1"],
+  "install": "make install"
+}
