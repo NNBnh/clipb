@@ -38,7 +38,19 @@ ln -s ~/.local/share/clipb/clipb ~/.local/bin/clipb
 ```
 
 #### Package manager
-`#TODO`
+For [`bpkg`](https://github.com/bpkg/bpkg) user:
+
+```sh
+bpkg install NNBnh/clipb
+```
+
+For [Basher](https://github.com/bpkg/bpkg) user:
+
+```sh
+basher install NNBnh/clipb
+```
+
+###### If you can and want to port Clipb to other package managers, feel free to do so.
 
 ## Usage
 Copy `TEXTS` to clipboard:
