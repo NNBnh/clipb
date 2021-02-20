@@ -4,7 +4,7 @@
 <p align="center"><img src="https://img.shields.io/github/watchers/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"> <img src="https://img.shields.io/github/stars/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"> <img src="https://img.shields.io/github/forks/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"> <img src="https://img.shields.io/github/issues/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></p>
 
 ## About
-`clipb` is a *SuperB* clipboard managers warper written in [exactly **128** lines](https://github.com/NNBnh/clipb/blob/main/clipb#L128) of [`pure sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
+`clipb` is a *SuperB* clipboard managers warper written in [exactly **128** lines](https://github.com/NNBnh/clipb/blob/main/clipb#L128) of [`portable sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
 
 ## Contents
 - [About](#about)
