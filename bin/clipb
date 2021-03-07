@@ -45,7 +45,7 @@ case $(uname -s | sed -e 's/[[:upper:]]/\L&/g') in
 				PASTE_COMMAND='wl-paste --no-newline'
 			else
 			printf '%s' "clipb: can't interact with Wayland's clipboard
-please install 'wl-clipboard'"
+please install 'wl-clipboard'" >&2
 
 			exit 1
 			fi
@@ -58,12 +58,12 @@ please install 'wl-clipboard'"
 				PASTE_COMMAND='xsel --output --clipboard'
 			else
 			printf '%s' "clipb: can't interact with Xorg's clipboard
-please install 'xclip' or 'xsel'"
+please install 'xclip' or 'xsel'" >&2
 
 			exit 1
 			fi
 		else
-			printf '%s' "clipb: this system is not supported"
+			printf '%s' "clipb: this system is not supported" >&2
 
 			exit 1
 		fi
@@ -99,7 +99,7 @@ wraps various system-specific tools for interacting with a system clipboard.
     ;;
 	*)
 		printf '%s' "clipb: invalid actions -- '$ACTION'
-Try 'clipb help' for more information."
+Try 'clipb help' for more information." >&2
 
 		exit 1
 	;;
