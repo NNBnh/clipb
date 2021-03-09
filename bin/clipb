@@ -29,7 +29,7 @@
 
 
 # Values
-case $(uname -s | sed -e 's/[[:upper:]]/\L&/g') in
+case $(uname -s | tr '[:upper:]' '[:lower:]') in
 	'cygwin')
 		 COPY_COMMAND='cat >/dev/clipboard'
 		PASTE_COMMAND='cat /dev/clipboard'
@@ -40,7 +40,7 @@ case $(uname -s | sed -e 's/[[:upper:]]/\L&/g') in
 	;;
 	*)
 		if [ -n "$WAYLAND_DISPLAY" ]; then
-			if command -v wl-copy >/dev/null && command -v wl-paste >/dev/null; then
+			if [ -x "$(command -v wl-copy)" ] && [ -x "$(command -v wl-paste)" ]; then
 				 COPY_COMMAND='wl-copy'
 				PASTE_COMMAND='wl-paste --no-newline'
 			else
@@ -50,10 +50,10 @@ please install 'wl-clipboard'" >&2
 			exit 1
 			fi
 		elif [ -n "$DISPLAY" ]; then
-			if command -v xclip >/dev/null; then
+			if [ -x "$(command -v xclip)" ]; then
 				 COPY_COMMAND='xclip -in  -selection clipboard'
 				PASTE_COMMAND='xclip -out -selection clipboard'
-			elif command -v xsel >/dev/null; then
+			elif [ -x "$(command -v xsel)" ]; then
 				 COPY_COMMAND='xsel --input  --clipboard'
 				PASTE_COMMAND='xsel --output --clipboard'
 			else
