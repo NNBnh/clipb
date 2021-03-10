@@ -73,10 +73,10 @@ esac
 ACTION="${1:-copy}"
 TEXTS="$*"
 
-if [ -p '/dev/stdin' ] && [ "$TEXTS" = "$ACTION" ]; then
+if [ -p '/dev/stdin' ] && [ "$TEXTS" = "$1" ]; then
 	TEXTS=$(cat -)
 else
-	TEXTS=$(printf '%s' "$TEXTS" | sed -e "s/^$ACTION //")
+	TEXTS=$(printf '%s' "$TEXTS" | sed -e "s/^$1\( \|\)//")
 fi
 
 
