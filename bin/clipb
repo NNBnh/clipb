@@ -63,9 +63,14 @@ please install 'xclip' or 'xsel'" >&2
 			exit 1
 			fi
 		else
-			printf '%s' "clipb: this system is not supported" >&2
+			if [ -x "$(command -v termux-clipboard-set)" ]; then
+				 COPY_COMMAND='termux-clipboard-set'
+				PASTE_COMMAND='termux-clipboard-get'
+			else
+				printf '%s' "clipb: this system is not supported" >&2
 
-			exit 1
+				exit 1
+			fi
 		fi
 	;;
 esac
@@ -76,7 +81,7 @@ TEXTS="$*"
 if [ -p '/dev/stdin' ] && [ "$TEXTS" = "$1" ]; then
 	TEXTS=$(cat -)
 else
-	TEXTS=$(printf '%s' "$TEXTS" | sed -e "s/^$1\( \|\)//")
+	TEXTS="${TEXTS#$1 }"
 fi
 
 
@@ -84,7 +89,7 @@ fi
 case "$ACTION" in
 	'copy')  eval "$COPY_COMMAND '$TEXTS'" ;;
 	'paste') eval "$PASTE_COMMAND"         ;;
-	'help')
+	'help'|'--help'|'-h')
 		printf "\033[1mClipb\033[0m is a SuperB clipboard managers warper that
 wraps various system-specific tools for interacting with a system clipboard.
 

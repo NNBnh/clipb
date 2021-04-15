@@ -20,6 +20,7 @@
 - `sh` to process
 - [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard) for [Wayland](https://wayland.freedesktop.org)
 - [`xclip`](https://github.com/astrand/xclip) or [`xsel`](http://www.kfish.org/software/xsel) for [X.org](https://www.x.org)
+- [`termux-api`](https://wiki.termux.com/wiki/Termux:API) for [Termux](https://termux.com/)
 
 ### Installation
 #### Manually
