@@ -3,27 +3,18 @@
 <p align="center"><a href="https://github.com/NNBnh/clipb/blob/main/LICENSE"><img src="https://img.shields.io/github/license/NNBnh/clipb?labelColor=073551&color=4EAA25&style=for-the-badge" alt="License: GPL-3.0"></a> <img src="https://img.shields.io/badge/development-completed-%234EAA25.svg?labelColor=073551&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></p>
 <p align="center"><a href="https://github.com/NNBnh/clipb/watchers"><img src="https://img.shields.io/github/watchers/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/stargazers"><img src="https://img.shields.io/github/stars/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/network/members"><img src="https://img.shields.io/github/forks/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/issues"><img src="https://img.shields.io/github/issues/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a></p>
 
-## About
-`clipb` is a *SuperB* clipboard managers warper written in [exactly **128** lines](https://github.com/NNBnh/clipb/blob/main/clipb#L128) of [`portable sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
+## 💡 About
+`clipb` is a *SuperB* clipboard managers warper written in [exactly **128** lines](https://github.com/NNBnh/clipb/blob/main/clipb#L128) of [`sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
 
-## Contents
-- [About](#about)
-- [Contents](#contents)
-- [Setup](#setup)
-  - [Dependencies](#dependencies)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-
-## Setup
-### Dependencies
+## 🚀 Setup
+### 🧾 Dependencies
 - `sh` to process
 - [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard) for [Wayland](https://wayland.freedesktop.org)
 - [`xclip`](https://github.com/astrand/xclip) or [`xsel`](http://www.kfish.org/software/xsel) for [X.org](https://www.x.org)
 - [`termux-api`](https://wiki.termux.com/wiki/Termux:API) for [Termux](https://termux.com/)
 
-### Installation
-#### Manually
+### 📥 Installation
+#### 🔧 Manually
 - Option 1: using `curl`
 
 ```sh
@@ -38,7 +29,7 @@ git clone https://github.com/NNBnh/clipb.git ~/.local/share/clipb
 ln -s ~/.local/share/clipb/bin/clipb ~/.local/bin/clipb
 ```
 
-#### Package manager
+#### 📦 Package manager
 For [`bpkg`](https://github.com/bpkg/bpkg) user:
 
 ```sh
@@ -51,9 +42,9 @@ For [Basher](https://github.com/bpkg/bpkg) user:
 basher install NNBnh/clipb
 ```
 
-###### If you can and want to port Clipb to other package managers, feel free to do so.
+> *If you can and want to port Clipb to other package managers, feel free to do so.*
 
-## Usage
+## ⌨️ Usage
 Copy `TEXTS` to clipboard:
 
 ```sh
@@ -66,7 +57,7 @@ Paste from clipboard:
 clipb paste
 ```
 
-## Credits
+## 💌 Credits
 Special thanks to:
 - [**Kakboard**](https://github.com/lePerdu/kakboard) by [Zach Peltzer](https://github.com/lePerdu)
 - [**Vis-clipboard**](https://github.com/martanne/vis) by [Marc André Tanner](https://github.com/martanne)
