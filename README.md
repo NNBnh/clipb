@@ -1,5 +1,6 @@
 <h1 align="center"><code>clipb</code></h1>
 <p align="center">Clipboard managers warper that <i>SuperB</i></p>
+<p align="center"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/281/clipboard_1f4cb.png"></p>
 <p align="center"><a href="https://github.com/NNBnh/clipb/blob/main/LICENSE"><img src="https://img.shields.io/github/license/NNBnh/clipb?labelColor=073551&color=4EAA25&style=for-the-badge" alt="License: GPL-3.0"></a> <img src="https://img.shields.io/badge/development-completed-%234EAA25.svg?labelColor=073551&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></p>
 <p align="center"><a href="https://github.com/NNBnh/clipb/watchers"><img src="https://img.shields.io/github/watchers/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/stargazers"><img src="https://img.shields.io/github/stars/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/network/members"><img src="https://img.shields.io/github/forks/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/issues"><img src="https://img.shields.io/github/issues/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a></p>
 
