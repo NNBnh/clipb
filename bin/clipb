@@ -31,7 +31,7 @@
 # Values
 case $(uname -s | tr '[:upper:]' '[:lower:]') in
 	'cygwin')
-		 COPY_COMMAND='cat >/dev/clipboard'
+		 COPY_COMMAND='tee /dev/clipboard 2>&-'
 		PASTE_COMMAND='cat /dev/clipboard'
 	;;
 	'darwin'*)
@@ -87,8 +87,8 @@ fi
 
 # Start
 case "$ACTION" in
-	'copy')  eval "$COPY_COMMAND '$TEXTS'" ;;
-	'paste') eval "$PASTE_COMMAND"         ;;
+	'copy')  printf '%s' "$TEXTS" | eval "$COPY_COMMAND" ;;
+	'paste') eval "$PASTE_COMMAND" ;;
 	'help'|'--help'|'-h')
 		printf "\033[1mClipb\033[0m is a SuperB clipboard managers warper that
 wraps various system-specific tools for interacting with a system clipboard.
