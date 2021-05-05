@@ -75,10 +75,11 @@ please install 'xclip' or 'xsel'" >&2
 	;;
 esac
 
-ACTION="${1:-copy}"
+ACTION="${1:-paste}"
 TEXTS="$*"
 
-if [ -p '/dev/stdin' ] && [ "$TEXTS" = "$1" ]; then
+if [ -p '/dev/stdin' ] && [ "${1:-copy}" = 'copy' ]; then
+	ACTION='copy'
 	TEXTS=$(cat -)
 else
 	TEXTS="${TEXTS#$1 }"
@@ -87,8 +88,14 @@ fi
 
 # Start
 case "$ACTION" in
-	'copy')  printf '%s' "$TEXTS" | eval "$COPY_COMMAND" ;;
-	'paste') eval "$PASTE_COMMAND" ;;
+	'copy')
+		printf '%s' "$TEXTS" | eval "$COPY_COMMAND"
+
+		[ ! -t '1' ] && printf '%s' "$TEXTS"
+	;;
+	'paste')
+		eval "$PASTE_COMMAND"
+	;;
 	'help'|'--help'|'-h')
 		printf "\033[1mClipb\033[0m is a SuperB clipboard managers warper that
 wraps various system-specific tools for interacting with a system clipboard.
@@ -112,17 +119,3 @@ esac
 
 
 exit 0
-#       ▄▄▄▄█▀▀█▄▄▄▄
-#   ▄▄▄▄█▓▓▓█▄▄█▓▓▓█▄▄▄▄
-#   ██▀▀█▓▓▓▓▓▓▓▓▓▓█▀▀██
-#   ██  ▀▀▀▀▀▀▀▀▀▀▀▀  ██
-#   ██  ▄▄▄▄▄▄▄▄      ██
-#   ██                ██
-#   ██  ▀▀▀▀▀▀▀▀▀▀▀▀  ██
-#   ██  ▄▄▄▄▄▄▄▄▄▄▄▄  ██
-#   ██                ██
-#   ██      ▀▀▀▀▀▀▀▀  ██
-#   ██▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄██
-#   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-#
-# 128!!!

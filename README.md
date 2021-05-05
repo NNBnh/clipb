@@ -5,7 +5,7 @@
 <p align="center"><a href="https://github.com/NNBnh/clipb/watchers"><img src="https://img.shields.io/github/watchers/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/stargazers"><img src="https://img.shields.io/github/stars/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/network/members"><img src="https://img.shields.io/github/forks/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/clipb/issues"><img src="https://img.shields.io/github/issues/NNBnh/clipb?labelColor=073551&color=4EAA25&style=flat-square"></a></p>
 
 ## 💡 About
-`clipb` is a *SuperB* clipboard managers warper written in [exactly **128** lines](https://github.com/NNBnh/clipb/blob/main/clipb#L128) of [`sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
+`clipb` is a *SuperB* clipboard managers warper written in [`portable sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
 
 ## 🚀 Setup
 ### 🧾 Dependencies
