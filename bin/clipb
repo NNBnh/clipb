@@ -44,10 +44,10 @@ case $(uname -s | tr '[:upper:]' '[:lower:]') in
 				 COPY_COMMAND='wl-copy'
 				PASTE_COMMAND='wl-paste --no-newline'
 			else
-			printf '%s' "clipb: can't interact with Wayland's clipboard
-please install 'wl-clipboard'" >&2
+				printf '%s\n%s' "clipb: can't interact with Wayland's clipboard" \
+				                "please install 'wl-clipboard'" >&2
 
-			exit 1
+				exit 1
 			fi
 		elif [ -n "$DISPLAY" ]; then
 			if [ -x "$(command -v xclip)" ]; then
@@ -57,10 +57,10 @@ please install 'wl-clipboard'" >&2
 				 COPY_COMMAND='xsel --input  --clipboard'
 				PASTE_COMMAND='xsel --output --clipboard'
 			else
-			printf '%s' "clipb: can't interact with Xorg's clipboard
-please install 'xclip' or 'xsel'" >&2
+				printf '%s\n%s' "clipb: can't interact with Xorg's clipboard" \
+				                "please install 'xclip' or 'xsel'" >&2
 
-			exit 1
+				exit 1
 			fi
 		else
 			if [ -x "$(command -v termux-clipboard-set)" ]; then

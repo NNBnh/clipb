@@ -7,6 +7,8 @@
 ## 💡 About
 `clipb` is a *SuperB* clipboard managers warper written in [`portable sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
 
+> *This is a standalone `CLI` version of [`clipb.kak`](https://github.com/NNBnh/clipb).*
+
 ## 🚀 Setup
 ### 🧾 Dependencies
 - `sh` to process
