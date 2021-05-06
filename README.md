@@ -7,7 +7,10 @@
 ## 💡 About
 `clipb` is a *SuperB* clipboard managers warper written in [`portable sh`](https://github.com/dylanaraps/pure-sh-bible) that wraps various system-specific tools for interacting with a system clipboard.
 
-> *This is a standalone `CLI` version of [`clipb.kak`](https://github.com/NNBnh/clipb).*
+### 📔 Story
+When switch around [Wayland](https://wayland.freedesktop.org) and [X.org](https://www.x.org), i realise my shell scripts that copy/paste text to and from clipboard are broken. So i strip the [`kakboard-autodetect` function](https://github.com/lePerdu/kakboard/blob/2f13f5cd99591b76ad5cba230815b80138825120/kakboard.kak#L98-L138) out into a standalone CLI clipboard managers warper call [`clipb`](https://github.com/NNBnh/clipb) to detect and interacting with any system clipboard.
+
+> *Checkout [`clipb.kak`](https://github.com/NNBnh/clipb.kak), an extremely strip down fork of [Kakboard](https://github.com/lePerdu/kakboard).*
 
 ## 🚀 Setup
 ### 🧾 Dependencies
