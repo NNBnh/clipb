@@ -12,6 +12,16 @@ When switch around [Wayland](https://wayland.freedesktop.org) and [X.org](https:
 
 > *Checkout [`clipb.kak`](https://github.com/NNBnh/clipb.kak), an extremely strip down fork of [Kakboard](https://github.com/lePerdu/kakboard).*
 
+### ✨ Features
+- Work with `tee` like pipeline (e.g: `ls | clipb | grep -e 'string'`)
+- Supported clipboard managers are:
+  - [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard)
+  - [`xclip`](https://github.com/astrand/xclip)
+  - [`xsel`](http://www.kfish.org/software/xsel)
+  - `pbcopy`, `pbpaste`
+  - `cygwin`'s `/dev/clipboard`
+  - [`termux-api`](https://wiki.termux.com/wiki/Termux:API)
+
 ## 🚀 Setup
 ### 🧾 Dependencies
 - `sh` to process
