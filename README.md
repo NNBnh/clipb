@@ -43,12 +43,12 @@ ln -s ~/.local/share/clipb/bin/clipb ~/.local/bin/clipb
 ```
 
 #### 📦 Package manager
-For [`bpkg`](https://github.com/bpkg/bpkg) user:
+For [Bpkg](https://github.com/bpkg/bpkg) user:
 ```sh
 bpkg install NNBnh/clipb
 ```
 
-For [Basher](https://github.com/bpkg/bpkg) user:
+For [Basher](https://github.com/basherpm/basher) user:
 ```sh
 basher install NNBnh/clipb
 ```
